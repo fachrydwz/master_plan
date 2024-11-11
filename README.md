@@ -1,4 +1,6 @@
 # NAMA  : FACHRY DWI ZAKARIA
+# NIM   : 362358302020
+# KELAS : 2B TRPL
 1. ![Alt text](image.png)
 2. Maksud dari Langkah 4
 Pada langkah 4, kita membuat file data_layer.dart di dalam folder models untuk mengimpor model Plan dan Task. File ini menggunakan perintah export untuk mengekspor beberapa model dalam satu file.
