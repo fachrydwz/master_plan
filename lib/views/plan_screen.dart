@@ -10,7 +10,7 @@ class PlanScreen extends StatefulWidget {
 
 class _PlanScreenState extends State<PlanScreen> {
   Plan plan = const Plan();
-  late ScrollController scrollController;  // Deklarasi scrollController dengan late
+  late ScrollController scrollController;
 
   @override
   void initState() {
@@ -24,7 +24,16 @@ class _PlanScreenState extends State<PlanScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Master Plan Namaku')), // ganti 'Namaku' dengan nama panggilan Anda
+      appBar: AppBar(
+        title: Container(
+          color: Colors.yellow, // Warna background kuning untuk teks judul
+          padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+          child: const Text(
+            'Master Plan Namaku', // Ganti 'Namaku' dengan nama panggilan Anda
+            style: TextStyle(color: Colors.black), // Warna teks hitam
+          ),
+        ),
+      ),
       body: _buildList(),
       floatingActionButton: _buildAddTaskButton(),
     );
@@ -46,7 +55,7 @@ class _PlanScreenState extends State<PlanScreen> {
 
   Widget _buildList() {
     return ListView.builder(
-      controller: scrollController, // Pastikan scrollController digunakan di sini
+      controller: scrollController,
       itemCount: plan.tasks.length,
       itemBuilder: (context, index) => _buildTaskTile(plan.tasks[index], index),
     );
